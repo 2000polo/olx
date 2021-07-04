@@ -6,9 +6,14 @@ import Heart from '../../Assets/Heart';
 import Plus from '../../Assets/Plus';
 import { AuthContext, firebaseContext } from '../../Contexts/Context';
 import {useHistory} from 'react-router-dom';
-import { FiSearch } from 'react-icons/fi';
-import {BiMessage, BiBell} from 'react-icons/bi';
+import { FiSearch, FiCheck, FiSettings } from 'react-icons/fi';
+import {BiMessage, BiBell, BiCurrentLocation, BiHelpCircle, BiDownload, BiLogOut} from 'react-icons/bi';
+import { GoLocation } from 'react-icons/go';
+import { TiDocumentText } from 'react-icons/ti'
+import { RiTodoLine } from 'react-icons/ri'
+import { MdPayment } from 'react-icons/md'
 import { IconContext } from 'react-icons';
+
 import './Header1.css';
 
 const Header1 = () =>{
@@ -17,12 +22,10 @@ const Header1 = () =>{
     const [langDrop, setLangDrop] = useState('false');
     const [dpDrop, setDpdrop] = useState('false');
 
-    const {user} = useContext(AuthContext);
+    const {user, name} = useContext(AuthContext);
     const {Firebase} = useContext(firebaseContext);
 
     const history = useHistory();
-
-    // console.log(user.displayName)
 
     const logoutHandler = () =>{
         Firebase.auth().signOut();
@@ -36,41 +39,122 @@ const Header1 = () =>{
     
 
     const locationDropdown = <div className="location-dropdown-tile">
-                                <div className="locations">
-                                <Heart />
-                                <p className="location-name">India</p>
 
+                                <div className="current-location-wrapper">
+                                        <IconContext.Provider value={{color:"skyblue", size:"23px"}} >
+                                            <BiCurrentLocation />
+                                        </IconContext.Provider>
+                                        <div className="current-data">
+                                            <h4>Use current location </h4>
+                                            <p>Location blocked. Check browser or phone settings</p>
+                                        </div>
+                                </div> 
+
+                                <div className="locations">
+                                    <IconContext.Provider value={{color:"#002f34", size:"23px"}} >
+                                        <GoLocation />
+                                    </IconContext.Provider>
+                                <p className="location-name">Kochi</p>
                                 </div>
                                 <div className="locations">
-                                <Heart />
-                                <p className="location-name">Canada</p>
+                                    <IconContext.Provider value={{color:"#002f34", size:"23px"}} >
+                                        <GoLocation />
+                                    </IconContext.Provider>
+                                <p className="location-name">Ernakulam</p>
                                 </div>
                                 <div className="locations">
-                                <Heart />
-                                <p className="location-name">France</p>
+                                    <IconContext.Provider value={{color:"#002f34", size:"23px"}} >
+                                        <GoLocation />
+                                    </IconContext.Provider>
+                                <p className="location-name">Aaluva</p>
+                                </div>
+                                <div className="locations">
+                                    <IconContext.Provider value={{color:"#002f34", size:"23px"}} >
+                                        <GoLocation />
+                                    </IconContext.Provider>
+                                <p className="location-name">Thrissur</p>
+                                </div>
+                                <div className="locations">
+                                    <IconContext.Provider value={{color:"#002f34", size:"23px"}} >
+                                        <GoLocation />
+                                    </IconContext.Provider>
+                                <p className="location-name">Ankamali</p>
                                 </div>
                             </div>;
 
     const languageDropdown = <div className="language-dropdown">
                                 <div className="language-tile">
                                     <p className="lang">English</p>
-                                    <Heart />
+                                    <IconContext.Provider value={{size:"23px"}} >
+                                        <FiCheck />
+                                    </IconContext.Provider>
                                 </div>
                                 <div className="language-tile">
                                     <p className="lang">Hindi</p>
-                                    <Heart />
+                                    {/* <Heart /> */}
                                 </div>
                             </div>;
 
     const dpDropdown = <div className = "dp-dropdown-wrapper">
                             <div className="dp-dropdown">
-                                <div className="dp-drop-tile">
-                                    <p className="logout"><a href='#' onClick={logoutHandler}>logout</a></p>
-                                    <Heart />
+                                <div className=" dp-tile">
+                                    <div className="dp-header"></div>
+                                    <div className="dp-name-welcome-tile">
+                                        <span>Hello!</span>
+                                        <h4>{user?user.displayName:""}</h4>
+                                        <p><a href="#">View and edit profile</a></p>
+                                    </div>
+                                    
                                 </div>
-                                <div className="dp-drop-tile">
-                                    <p className="logout"><a href="#">Settings</a></p>
-                                    <Heart />
+                                <div className="dp-drp-dwn-link-wrapper1">
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <TiDocumentText/>
+                                        </IconContext.Provider>
+                                        <p>My Ads</p>
+                                    </div>
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <RiTodoLine/>
+                                        </IconContext.Provider>
+                                        <p>Buy Business Packages</p>
+                                    </div>
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <MdPayment/>
+                                        </IconContext.Provider>
+                                        <p>Packages and Billing</p>
+                                    </div>
+                                </div>
+                                <div className="dp-drp-dwn-link-wrapper1">
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <BiHelpCircle/>
+                                        </IconContext.Provider>
+                                        <p>Help</p>
+                                    </div>
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <FiSettings/>
+                                        </IconContext.Provider>
+                                        <p>Settings</p>
+                                    </div>
+                                </div>
+                                <div className="dp-drp-dwn-link-wrapper1">
+                                    <div className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <BiDownload/>
+                                        </IconContext.Provider>
+                                        <p>Help</p>
+                                    </div>
+                                </div>
+                                <div className="dp-drp-dwn-link-wrapper1">
+                                    <div onClick={logoutHandler} className="dp-drop-tile">
+                                        <IconContext.Provider value={{color:"#002f34", size:"23px"}}>
+                                            <BiLogOut/>
+                                        </IconContext.Provider>
+                                        <p>Logout</p>
+                                    </div>
                                 </div>
                             </div>
                         </div> 

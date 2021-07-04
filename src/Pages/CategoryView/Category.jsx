@@ -11,7 +11,10 @@ const Category = () =>{
     return (
         <div className="Category-Main-Wrapper">
             <Header1 />
-            <Productgrid cat={category} />
+            <div className="category-grid">
+                <Productgrid cat={category} />
+            </div>
+            
         </div>
     )
 }

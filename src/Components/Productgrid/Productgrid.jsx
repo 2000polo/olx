@@ -53,7 +53,9 @@ function Productgrid(props){
             <div className="product-grid-container">
                 <div className="Grid">
                     { 
-                    spec ? 
+                    
+                    props.cat ? 
+                    
                     spec.map(product=>{
                             return(
                                 <div onClick={()=>viewHandler(product)} className="grid-card">
@@ -70,7 +72,11 @@ function Productgrid(props){
                                 </div>
                             )
                         }) 
-                        :
+                        : ""
+                    }
+
+                    {
+                        !props.cat ?
                         gridProduct.map(product=>{
                             return(
                                 <div onClick={()=>viewHandler(product)} className="grid-card">
@@ -88,6 +94,7 @@ function Productgrid(props){
                             )
                         })
                         
+                        : ""
                     }
                 </div>
             </div>
