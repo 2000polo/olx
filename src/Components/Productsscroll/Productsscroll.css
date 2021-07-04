@@ -1,0 +1,17 @@
+.scroll-bar-container{
+    /* position: relative;
+    top: 54vh; */
+    margin: 0 9vw;
+    overflow: scroll;
+    
+}
+
+.scroll-bar{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.card{
+    margin: 0 2vw 0 0;
+}

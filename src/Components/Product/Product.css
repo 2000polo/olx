@@ -1,0 +1,146 @@
+.product-card-container{
+    height: 300px;
+    width: 280px;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 3px;
+    /* position: absolute;  */
+    /* margin: 0 2vw 0 0; */
+    cursor: pointer;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card{
+    height: 100%;
+    width: 100%;
+}
+
+.product-img{
+    height: 15%;
+    width: 80%;
+    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/olx-clone-1230b.appspot.com/o/image%2Fmaruti-suzuki-vitara-brezza-new_600x400.webp?alt=media&token=64b4e7aa-0736-492a-8a35-8da9aede4f51); */
+    background-size: contain;
+    margin-top: 1vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* position: absolute; */
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-container{
+    width: 100%;
+    height: 300%;
+    position: relative;
+    /* padding: 1vh .2vw */
+    overflow:hidden
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1vw;
+    position: absolute;
+    z-index: 2;
+}
+
+.ftrd{
+    background: rgb(255, 217, 0);
+    color: rgb(35, 49, 66);
+    border-radius: 3px;
+    font-size: .6rem;
+    font-weight: 600;
+    padding: 2px 5px;
+}
+
+.img-detials{
+    height:50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.6vh;
+    border-left: 4.5px solid yellow;
+    margin-top: 3vh;
+
+}
+
+.price{
+    margin-bottom:1vh;
+    margin-bottom: 1vh;
+}
+
+.data1{
+    font-weight:normal;
+}
+
+.data2{
+    font-size: .9rem;
+    color:rgb(94, 94, 94);
+}
+
+
+.price,
+.data1,
+.data2,
+.meta-data{
+    padding-left: 3vh;
+}
+
+.date, .m-data{
+    font-size: .7rem;
+    color: rgb(94, 94, 94);
+}
+
+.meta-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date{
+    padding: 7px;
+}
+
+@media only screen and (max-width: 700px){
+    .product-card-container{
+        width: 200px;
+        height: 180px;
+    }
+
+    .img-detials{
+        margin-top: 0%;
+        padding-top: 0;
+    }
+
+    .product-img{
+        margin-top: 10%;
+    }
+
+    .price,
+    .data1,
+    .data2,
+    .meta-data{
+        padding-left: 5%;
+    }
+
+    .price{
+        font-size: .9rem;
+        margin-bottom: 0;
+    }
+    
+    .data1{
+        font-size: .7rem;
+    }
+
+    .data2{
+        font-size: .7rem;
+    }
+
+    .m-data,.date{
+        font-size: .6rem;
+    }
+}
