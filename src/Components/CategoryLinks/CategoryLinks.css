@@ -72,3 +72,8 @@
     margin-bottom: 1vh;
     font-weight: 600;
 }
+
+.f-c-link{
+    margin-bottom: 5px;
+    cursor: pointer;
+}

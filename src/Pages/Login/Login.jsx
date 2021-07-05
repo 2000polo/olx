@@ -1,6 +1,8 @@
 import React,{useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import { firebaseContext } from '../../Contexts/Context';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 import './Login.css';
 
 function Login(){
@@ -10,6 +12,7 @@ function Login(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
 
     const submitHandler = (e)=>{
@@ -18,9 +21,10 @@ function Login(){
         .then(()=>{
             history.push('/')
         })
-        .catch((error)=>{
-        // console.log(error.message)
-        })
+        setLoading(true);
+        // catch((error)=>{
+        // // console.log(error.message)
+        // })
     }
 
     return(
@@ -93,11 +97,29 @@ function Login(){
                             </div>
                             
                         </form>
+                        
                     </div>
 
                     </div>
                 </div>
             </div>
+            {
+            loading ? 
+            <div className="loader">
+            
+                
+                <Loader
+                type="TailSpin"
+                color="#002f34"
+                height={30}
+                width={100}
+                // timeout={3000} //3 secs
+              /> 
+              <p>Loading</p>
+            
+            </div>
+             : ""
+            }
         </div>
     )
 }

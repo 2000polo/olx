@@ -43,9 +43,9 @@ const HeaderLinks = ()=>{
                 <div className="f-category-list">
                     <div className="cat-links">
                         <span className="f-c-head">VEHICLES</span>
-                        <span onClick = {categoryHandler} >Car</span>
-                        <span onClick = {categoryHandler} >Scooter</span>
-                        <span onClick = {categoryHandler} >Bike</span>
+                        <span className="f-c-link" onClick = {categoryHandler} >Car</span>
+                        <span className="f-c-link" onClick = {categoryHandler} >Scooter</span>
+                        <span className="f-c-link" onClick = {categoryHandler} >Bike</span>
                     </div>
                 </div>}
         </div>

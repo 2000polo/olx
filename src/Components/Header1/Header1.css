@@ -180,6 +180,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
 }
 
 .language h5{
@@ -236,6 +237,7 @@
 
 .dp-drop-tile{
     padding: 5px 0;
+    cursor: pointer;
 }
 .dp-drop-tile p{
     margin-left: 5px;

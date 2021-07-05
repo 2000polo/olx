@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react';
 import { firebaseContext } from '../../Contexts/Context';
 import {useHistory} from 'react-router-dom';
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 import './Signup.css';
 
@@ -13,6 +14,7 @@ function Signup(){
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoader] = useState(false);
 
     const {Firebase} = useContext(firebaseContext);
 
@@ -28,6 +30,7 @@ function Signup(){
                 }).then(()=>{
                     history.push("/login")
                 })
+                setLoader(true);
 
             })
         })
@@ -149,6 +152,23 @@ function Signup(){
                     </div>
                 </div>
             </div>
+            {
+            loading ? 
+            <div className="signup-loader">
+            
+                
+                <Loader
+                type="TailSpin"
+                color="#002f34"
+                height={30}
+                width={100}
+                timeout={8000} //3 secs
+              /> 
+              <p>Loading</p>
+            
+            </div>
+             : ""
+            }
         </div>
     )
 }

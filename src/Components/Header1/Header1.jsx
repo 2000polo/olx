@@ -214,7 +214,7 @@ const Header1 = () =>{
                     <div className="language-wrapper">
                         <div className="language">
                             <div className="icon">
-                                <h5>ENGLISH</h5>
+                                <h5 onClick={langDropHandler} >ENGLISH</h5>
                                 <div onClick={langDropHandler}>
                                     <Arrow />
                                 </div>
