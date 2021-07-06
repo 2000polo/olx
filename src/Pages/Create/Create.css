@@ -110,8 +110,13 @@ nav{
         margin: 0;
     }
 
-    .b-input-feild, .yr-input-feild{
+    .img-wrapper, .b-input-feild, .yr-input-feild{
         /* width: 100%; */
+        width: 95%;
         margin: 10px 0;
+    }
+
+    .center{
+        transform: translateX(4%);
     }
 }

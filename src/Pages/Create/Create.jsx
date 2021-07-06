@@ -65,7 +65,7 @@ function Create() {
         <div className="create-main-wrapper">
             <nav>
                 <div onClick={backBtnHandler} className="back">
-                    <Arrow/>
+                    <Arrow color={"#002f34"}/>
                 </div>
                 <Logo />
             </nav>

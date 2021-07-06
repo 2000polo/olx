@@ -32,8 +32,16 @@ const Header1 = () =>{
         history.push('/signup');
     }
 
+    const loginHandler = () =>{
+        history.push("/login")
+    }
+
     const createBtnHandler = ()=>{
         history.push('/create');
+    }
+
+    const homeHandler = ()=> {
+        history.push('/')
     }
 
     
@@ -177,7 +185,7 @@ const Header1 = () =>{
                 <div className="header">
 
                     
-                    <div className="logo">
+                    <div onClick = {homeHandler} className="logo">
                         <Logo />
                     </div>
 
@@ -239,7 +247,9 @@ const Header1 = () =>{
                                 <BiBell/>
                         </IconContext.Provider>
                         </div>
-                    </div>    
+                    </div>
+                    {   
+                        user &&
                         <div className="dp-header-wrapper">
                                 <div className = "dp-header-icon">
                                     <div className="dp-header" onClick={dpDropHandler}>
@@ -249,11 +259,14 @@ const Header1 = () =>{
                                 </div>
 
                                 {dpDrop?"":dpDropdown}                           
-                        </div>
-
-                        {/* <div className="login"><a href="#">Login</a></div> */}
-
-                        <div onClick={createBtnHandler} className="sell-btn-header">
+                        </div> 
+                    }
+                        {
+                            !user &&
+                            <div className="login" onClick={loginHandler}><a href="#">Login</a></div>
+                        }
+                    
+                        <div onClick={user?createBtnHandler:loginHandler} className="sell-btn-header">
                             <Plus />
                             <h3>Sell</h3>
                         </div>

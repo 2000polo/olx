@@ -9,6 +9,7 @@ function Logo() {
         data-aut-id="icon"
         className
         fillRule="evenodd"
+        
       >
         <path
           className="rui-77aaa"

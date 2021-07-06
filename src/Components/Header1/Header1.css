@@ -33,6 +33,10 @@
     flex: 1;
 } */
 
+.logo{
+    cursor: pointer;
+}
+
 .location{
     height: 48px;
     min-width: 272px;
@@ -305,8 +309,19 @@
     
 }
 
+.dp-drop-tile:hover{
+    background-color: rgba(187, 187, 187, 0.199);
+}
+
 .login{
     margin-left: 15px;
+    
+
+}
+
+.login a{
+    color: #002F34;
+    font-weight: 600;
 }
 
 .sell-btn-header{

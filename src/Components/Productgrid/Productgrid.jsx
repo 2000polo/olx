@@ -48,7 +48,7 @@ function Productgrid(props){
     return(
         <div className="p-g-container">
             <div className="ttle">
-                <h3 className="grid-ttle">Fresh recomendations</h3>
+                <h3 className="grid-ttle">{cats? cats :"Fresh recomendations"}</h3>
             </div>
             <div className="product-grid-container">
                 <div className="Grid">

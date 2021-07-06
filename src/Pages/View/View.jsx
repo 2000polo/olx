@@ -24,7 +24,7 @@ function  View(){
 
     useEffect(() => {
         const {userid} = postDet;
-        Firebase.firestore().collection('user').where("id","==",userid).get().then((resp)=>{
+        Firebase.firestore().collection('user').where("id","==",userid?userid:"").get().then((resp)=>{
             resp.forEach(doc=>{
                 console.log(doc.data())
                 setUserDet(doc.data());
@@ -46,12 +46,12 @@ function  View(){
 
             <div className="view-container">
                 <div className="img-desc-detials">
-                    <div className="product-image" style={{backgroundImage:`url(${postDet.url})`}} ></div>
+                    <div className="product-image" style={{backgroundImage:`url(${postDet?postDet.url:""})`}} ></div>
                     <div className="detials">
                         <h3 className="detials-heading">
                             Detials
                         </h3>
-                        <p className= "dtls">Brand: {postDet.name}</p>
+                        <p className= "dtls">Brand: {postDet?postDet.name:""}</p>
                     </div>
                     <div className="description">
                         <h3 className = "description-heading">Description</h3>
@@ -72,7 +72,7 @@ function  View(){
                             </div>
                         </div>
 
-                        <div className="prdct-name"><h5>{postDet.name}</h5></div>
+                        <div className="prdct-name"><h5>{postDet?postDet.name:""}</h5></div>
 
                         <div className="place-date">
                             <p className="place">{postDet.location}</p>

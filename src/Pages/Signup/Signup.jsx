@@ -37,6 +37,10 @@ function Signup(){
 
     }
 
+    const loginHandler = () =>{
+        history.push("/login")
+    }
+
     return(
         <div className="signup-page-container">
             <div className="signup-container">
@@ -143,7 +147,7 @@ function Signup(){
                                 </div>
 
                                 <div className=" btn">
-                                    <button className="l-btn">Login</button>
+                                    <button onClick={loginHandler} className="l-btn">Login</button>
                                 </div>
                                 
                             </form>
